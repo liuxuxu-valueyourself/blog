@@ -1,3 +1,5 @@
 myapp/node_modules/
 myapp_vue/node_modules/
 myapp_vue/build/
+myapp_backstage/node_modules/
+myapp_backstage/build/
