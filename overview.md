@@ -20,3 +20,13 @@ https://www.npmjs.com/package/marked
 用户id 用户名字 用户权限
 
 
+node:
+安装express： npm install -g express-generator
+创建： express --view=pug myapp
+进入目录：cd myapp
+安装依赖：npm i
+启动：npm start
+
+vue:
+npm i vue vue-cli
+vue init webpack myapp_vue

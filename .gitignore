@@ -1,2 +1,3 @@
-myapp/dist/
 myapp/node_modules/
+myapp_vue/node_modules/
+myapp_vue/build/
