@@ -4,12 +4,13 @@ var connection = require('../db/sql')
 
 
 router.post('/addArticle', (req, res, next) => {
-    let sql = 'select * from classes'
-    connection.query(sql, (err, rows, fields) => {
+    let name = req.body.name;
+    console.log('name:', name);
+    let sql = `insert into classes (className,time) values (?,now());`
+    connection.query(sql, [name],(err, rows, fields) => {
         if (err) throw err
-        console.log(rows)
-        console.log(req.params);
-        res.send('respond with a resource GET users listing.' + JSON.stringify(rows));
+        // console.log(rows)
+        res.send('respond with a resource GET users listingOK.' + JSON.stringify(rows));
     })
 });
 
