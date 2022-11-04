@@ -1,4 +1,7 @@
 富文本 wangEditor
+编译报错：You may need an appropriate loader to handle this file type.
+找到 webplack.base.conf.js 
+修改babel-loader配置项 resolve('node_modules/@wangeditor')
 
 第三方库marked 可以把markdown转为html
 https://www.npmjs.com/package/marked
@@ -6,11 +9,13 @@ https://www.npmjs.com/package/marked
 进度条 nprogress
 
 **格式**
-`{
+```
+{
    code:'',
    data:{},
    msg:''
-}`
+}
+```
 
 **文章**
 文章id 分类 文章标题 文章描述 文章图片 文章内容 作者 发布时间
@@ -26,18 +31,19 @@ now() 当前日期和时间
 
 
 **node:**
-安装express： npm install -g express-generator
-创建： express --view=pug myapp
-进入目录：cd myapp
-安装依赖：npm i
-启动：npm start
+1. 安装express： npm install -g express-generator
+2. 创建： express --view=pug myapp
+3. 进入目录：cd myapp
+4. 安装依赖：npm i
+5. 启动：npm start
 
 **vue:**
-npm i vue vue-cli
-vue init webpack myapp_vue
+- npm i vue vue-cli
+- vue init webpack myapp_vue
 
-设置代理：
-`proxyTable: {
+### 设置代理：
+```
+proxyTable: {
    '/api':{                // 匹配api
       target:'http://localhost:3000',  //代理到后台接口域名
       changeOrigin:true,    //是否跨域
@@ -47,4 +53,7 @@ vue init webpack myapp_vue
          '^/api' : ''
       }
    }
-}`
+}
+```
+
+

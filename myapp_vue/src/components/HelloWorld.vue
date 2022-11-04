@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div class="click_div" @click="handleClick">发送请求</div>
+    <div class="click_div dd" @click="handleClick">添加文章</div>
+    <div class="click2_div dd" @click="handleClick2">删除文章</div>
+    <div class="dd" @click="handleClick3">修改文章</div>
+    <div class="dd" @click="handleClick4">查询文章</div>
   </div>
 </template>
 
@@ -18,12 +20,60 @@ export default {
     handleClick () {
       axios
         .post('/article/addArticle', {
-          name: '测试'
+          className: '前端',
+          articleName: '文章标题',
+          articleDesc: '很不错',
+          articleImg: '文章图片',
+          articleContent: '文章内容',
+          articleAvatar: '刘旭旭'
         })
-        .then(function (response) {
+        .then(response => {
           console.log(response)
         })
-        .catch(function (error) {
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    handleClick2 () {
+      axios
+        .post('/article/deteleArticle', {
+          id: 12
+        })
+        .then(response => {
+          console.log(response)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    handleClick3 () {
+      axios
+        .post('/article/updateArticle', {
+          id: 1,
+          className: '前端',
+          articleName: '文章标题',
+          articleDesc: '很不错的文章',
+          articleImg: '图片',
+          articleContent: '文章内容',
+          articleAvatar: '刘旭旭'
+        })
+        .then(response => {
+          console.log(response)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    handleClick4 () {
+      axios
+        .post('/article/queryArticle', {
+          pageNum: 1,
+          pageSize: 10
+        })
+        .then(response => {
+          console.log('queryArticle', response)
+        })
+        .catch(error => {
           console.log(error)
         })
     }
@@ -47,7 +97,7 @@ li {
 a {
   color: #42b983;
 }
-.click_div {
+.dd{
   cursor: pointer;
 }
 </style>

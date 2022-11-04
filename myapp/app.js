@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/classes');
+var classesRouter = require('./routes/classes');
 var articleRouter = require('./routes/article');
 
 
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/classes', classesRouter);
 app.use('/article', articleRouter);
 
 // catch 404 and forward to error handler
@@ -41,10 +41,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-module.exports = app;
-
-
 
 // const ws = require("nodejs-websocket")
 //
@@ -68,3 +64,9 @@ module.exports = app;
 // server.listen(PORT,()=>{
 //   console.log('websocket服务启动成功了，监听了端口'+PORT);
 // })
+
+module.exports = app;
+
+
+
+

@@ -3,6 +3,8 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'liuxuxu',
     password: 'liuxuxu',
-    database: 'blog'
+    port:'3306',
+    database: 'blog',
+    timezone: "08:00"
 })
 module.exports = connection
