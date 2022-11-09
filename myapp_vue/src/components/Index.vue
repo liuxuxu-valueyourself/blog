@@ -7,19 +7,29 @@
       </div>
       <div class="content_jj textLeft">{{item.descFlag}}</div>
     </div>
+    <div style='margin-top: 10px'>
+      <PageNum :nowPage="nowPage" :allData="allData" @handleClick="changePageNum($event)"/>
+    </div>
   </div>
 </template>
 
 <script>
 
 import axios from "../http";
+import PageNum from "./PageNum";
 
 export default {
-  components: {},
+  components: {
+    PageNum
+  },
   props: {},
   data () {
     return {
       list:[],
+      nowPage:1,
+      allData:30,
+      limit:10,
+      maxPageLen:6,
     }
   },
   computed: {},
@@ -48,6 +58,9 @@ export default {
         name: 'ArtDetail',
         query:{id:id}
       })
+    },
+    changePageNum(num) {
+      this.nowPage = num;
     }
   },
   mounted () {

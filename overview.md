@@ -56,4 +56,7 @@ proxyTable: {
 }
 ```
 
-
+查看端口
+netstat -ano | findstr 3000
+杀死进程
+taskkill -f -pid 14216
