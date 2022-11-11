@@ -60,3 +60,22 @@ proxyTable: {
 netstat -ano | findstr 3000
 杀死进程
 taskkill -f -pid 14216
+
+
+** pm2
+pm2是可以用于生产环境的Nodejs的进程管理工具
+相关链接：https://www.jianshu.com/p/bab31fac7655
+相关命令：
+启动进程
+pm2 start
+
+查看进程
+pm2 list
+
+杀死某进程
+pm2 delete 0
+
+端口被挡 
+/sbin/iptables -I INPUT -p tcp --dport 1315 -j ACCEPT
+navicat破解链接
+https://www.jb51.net/article/199525.html
